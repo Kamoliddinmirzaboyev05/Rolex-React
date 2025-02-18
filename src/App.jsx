@@ -3,14 +3,44 @@ import { useState } from "react";
 
 function App() {
   // Dark mode function
-  const [dark, setDark] = useState(localStorage.getItem("dark") ? JSON.parse(localStorage.getItem("dark")) : false);
+  const [dark, setDark] = useState(
+    localStorage.getItem("dark")
+      ? JSON.parse(localStorage.getItem("dark"))
+      : false
+  );
+  const [open, setOpen] = useState(false);
   return (
     <div className={dark ? "dark" : ""}>
       <header>
+        <div className={open ? "modalBack openModal" : "modalBack"}>
+          <div className="mobileModal">
+            <i onClick={()=>{
+              setOpen(false);
+            }} className="fa-solid fa-x"></i>
+            <ul className="modalLinks">
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#featured">FEATURED</a>
+              </li>
+              <li>
+                <a href="#">PRODUCTS</a>
+              </li>
+              <li>
+                <a href="#">NEW</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <nav>
           <div className="container">
             <div className="navlinks">
-              <img src={dark ? "white-logo.svg" : "public/logo.svg"} className="logo" alt="" />
+              <img
+                src={dark ? "white-logo.svg" : "public/logo.svg"}
+                className="logo"
+                alt=""
+              />
               <ul className="links">
                 <li>
                   <a className="dark-links lighter-type" href="#">
@@ -35,12 +65,24 @@ function App() {
               </ul>
             </div>
             <div className="navBtns">
-              <img onClick={()=>{
-                setDark(!dark);
-                localStorage.setItem("dark", !dark);
-              }} src="public/moon.svg" id="mode" alt="" />
+              <img
+                onClick={() => {
+                  setDark(!dark);
+                  localStorage.setItem("dark", !dark);
+                }}
+                src="public/moon.svg"
+                id="mode"
+                alt=""
+              />
               <img src="public/cart.svg" alt="" />
-              <img src="public/bars-light.svg" className="bar" alt="" />
+              <img
+                onClick={() => {
+                  setOpen(true);
+                }}
+                src="public/bars-light.svg"
+                className="bar"
+                alt=""
+              />
             </div>
             <div className="hero-img">
               <img src="public/Home img.png" className="decktop-hero" alt="" />
@@ -78,7 +120,7 @@ function App() {
       </header>
 
       <main>
-        <section className="section1">
+        <section id="featured" className="section1">
           <div className="container">
             <div className="sct-title">
               <h2 className="lighter-type">FEATURED</h2>
