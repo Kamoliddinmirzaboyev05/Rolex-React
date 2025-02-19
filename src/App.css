@@ -28,7 +28,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.modalBack.openModal{
+.modalBack.openModal {
   z-index: 9999999;
   opacity: 1;
 }
@@ -46,13 +46,16 @@ body {
   text-align: center;
   list-style: none;
 }
-.mobileModal i{
+.dark .modalLinks a {
+  color: white;
+}
+.mobileModal i {
   position: absolute;
   top: 30px;
   right: 30px;
   font-size: 32px;
 }
-.mobileModal i:active{
+.mobileModal i:active {
   color: #ffb568;
 }
 .modalLinks a {
@@ -61,7 +64,7 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
-.modalLinks a:active{
+.modalLinks a:active {
   color: #ffb568;
 }
 
@@ -82,66 +85,76 @@ body {
   top: -2000px;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, .90);
+  backdrop-filter: blur(35px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.openMoreModal{
+.dark .moreModal{
+  color: white;
+}
+.openMoreModal {
   opacity: 1;
   top: 0;
 }
-.moreModal{
+.moreModal {
   width: 1200px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
 }
-.moreModal i{
+.moreModal i {
   position: absolute;
   top: 80px;
   right: 80px;
   font-size: 32px;
 }
-.moreModal .imgSide{
+.moreModal .imgSide {
   width: 400px;
   padding: 30px;
-  border: 2px solid #FFB568;
+  border: 2px solid #ffb568;
   border-radius: 16px;
 }
-.moreModal .imgSide img{
+.moreModal .imgSide img {
   width: 100%;
 }
-.dataSide{
+.dataSide {
   width: 400px;
 }
-.dataSide h2{
+.dataSide h2 {
   font-size: 36px;
   font-weight: 500;
   line-height: 42px;
   padding-bottom: 24px;
-  color: #FFB568;
+  color: #ffb568;
 }
-.dataSide p{
+.dataSide p {
   font-size: 16px;
   font-weight: 400;
   line-height: 23px;
   color: #595959;
   padding-bottom: 24px;
 }
-.dataSide h3{
+.dark .dataSide p{
+  color: white;
+}
+.dataSide h3 {
   font-size: 22px;
   font-weight: 600;
   line-height: 23px;
   color: #000;
   padding-bottom: 24px;
 }
-.dataSide button{
+.dark .dataSide h3{
+  color: white;
+}
+.dataSide button {
   padding: 16px 24px;
   border: none;
-  background-color: #FFB568;
+  background-color: #ffb568;
   color: white;
 }
 /* Light-dark mode start */
@@ -345,8 +358,8 @@ nav .container {
   bottom: -100px;
   left: 80px;
 }
-.box:hover .box-price {
-  padding-bottom: 100px;
+.box .box-price {
+  padding-bottom: 60px;
 }
 .box:hover .addBtn {
   bottom: 30px;
@@ -687,6 +700,17 @@ footer .container {
   }
   .box-price {
     padding-bottom: 100px;
+  }
+  .moreModal {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0px;
+    text-align: center;
+    top: 15px 0;
   }
   .navlinks {
     gap: 30px;
