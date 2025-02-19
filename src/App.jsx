@@ -9,14 +9,132 @@ function App() {
       : false
   );
   const [open, setOpen] = useState(false);
+
+  // create db function
+  const [db, setDb] = useState([
+    {
+      id: 1,
+      img: "/box1.1.png",
+      title: "JAZZMASTER",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "featured",
+      price: "$1050",
+    },
+    {
+      id: 2,
+      title: "INGERSOLL",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "featured",
+      price: "$250",
+      img: "/box1.2.png",
+    },
+    {
+      id: 3,
+      title: "ROSE GOLD",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "featured",
+      price: "$890",
+      img: "/box1.3.png",
+    },
+    {
+      id: 4,
+      title: "SPIRIT ROSE",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "products",
+      price: "$1500",
+      img: "/sct3.1.png",
+    },
+    {
+      id: 5,
+      title: "KHAKI PILOT",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "products",
+      price: "$1350",
+      img: "/sct3.2.svg",
+    },
+    {
+      id: 6,
+      title: "JUBILEE BLACK",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "products",
+      price: "$870",
+      img: "/sct3.3.png",
+    },
+    {
+      id: 7,
+      title: "FOSIL ME3",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "products",
+      price: "$650",
+      img: "/sct3.4.png",
+    },
+    {
+      id: 8,
+      title: "DUCHEN",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: false,
+      sale: true,
+      type: "products",
+      price: "$950",
+      img: "/sct3.5.png",
+    },
+    {
+      id: 9,
+      title: "LONGINES ROSE",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: true,
+      sale: false,
+      type: "arrivals",
+      price: "$980",
+      img: "/box1.3.png",
+    },
+    {
+      id: 10,
+      title: "JAZZMASTER",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: true,
+      sale: false,
+      type: "arrivals",
+      price: "$1150",
+      img: "/box3.1.png",
+    },
+    {
+      id: 11,
+      title: "DREYFUSS GOLD",
+      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      new: true,
+      sale: false,
+      type: "arrivals",
+      price: "$750",
+      img: "/box3.4.png",
+    },
+  ]);
+
   return (
     <div className={dark ? "dark" : ""}>
       <header id="home">
         <div className={open ? "modalBack openModal" : "modalBack"}>
           <div className="mobileModal">
-            <i onClick={()=>{
-              setOpen(false);
-            }} className="fa-solid fa-x"></i>
+            <i
+              onClick={() => {
+                setOpen(false);
+              }}
+              className="fa-solid fa-x"
+            ></i>
             <ul className="modalLinks">
               <li>
                 <a href="#home">HOME</a>
@@ -31,6 +149,22 @@ function App() {
                 <a href="#">NEW</a>
               </li>
             </ul>
+          </div>
+        </div>
+        <div className="moreModalBack">
+          <div className="moreModal">
+            <i className="fa-solid fa-x"></i>
+            <div className="imgSide">
+              <img src="/public/box1.1.png" alt="" />
+            </div>
+            <div className="dataSide">
+              <h2>JAZZMASTER</h2>
+              <p>
+                Latest arrival of the new imported watches of the B720 series,
+                with a modern and resistant design.
+              </p>
+              <h3>$1050</h3>
+            </div>
           </div>
         </div>
         <nav>
@@ -86,11 +220,7 @@ function App() {
             </div>
             <div className="hero-img">
               <img src="/Home img.png" className="decktop-hero" alt="" />
-              <img
-                src="/mobile-hero.png"
-                className="mobile-hero"
-                alt=""
-              />
+              <img src="/mobile-hero.png" className="mobile-hero" alt="" />
             </div>
           </div>
         </nav>
@@ -126,51 +256,29 @@ function App() {
               <h2 className="lighter-type">FEATURED</h2>
             </div>
             <div className="block">
-              <div className="box box-mode">
-                <div className="sale">
-                  <h2>SALE</h2>
-                </div>
-                <div className="box-img">
-                  <img src="/box1.1.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-btn">
-                  <button className="addBtn grayer-btn">ADD TO CART</button>
-                </div>
-              </div>
-              <div className="box box-mode">
-                <div className="sale">
-                  <h2>SALE</h2>
-                </div>
-                <div className="box-img">
-                  <img src="/box1.2.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-btn">
-                  <button className="addBtn grayer-btn">ADD TO CART</button>
-                </div>
-              </div>
-              <div className="box box-mode">
-                <div className="sale">
-                  <h2>SALE</h2>
-                </div>
-                <div className="box-img">
-                  <img src="/box1.3.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-btn">
-                  <button className="addBtn grayer-btn">ADD TO CART</button>
-                </div>
-              </div>
+              {db.map((item) => {
+                if (item.type === "featured") {
+                  return (
+                    <div className="box box-mode">
+                      <div className="sale">
+                        <h2>SALE</h2>
+                      </div>
+                      <div className="box-img">
+                        <img src={item.img} alt="" />
+                      </div>
+                      <div className="box-title">
+                        <h2 className="lighter-type">{item.title}</h2>
+                        <p className="box-price">{item.price}</p>
+                      </div>
+                      <div className="box-btn">
+                        <button className="addBtn grayer-btn">
+                          ADD TO CART
+                        </button>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
             </div>
           </div>
         </section>
@@ -200,66 +308,24 @@ function App() {
               <h2 className="lighter-type">PRODUCTS</h2>
             </div>
             <div className="block">
-              <div className="sct3-box box-mode">
-                <div className="box-img">
-                  <img src="/sct3.1.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-cart grayer-btn">
-                  <img src="/white-cart.svg" alt="" />
-                </div>
-              </div>
-              <div className="sct3-box box-mode">
-                <div className="box-img">
-                  <img src="/sct3.2.svg" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-cart grayer-btn">
-                  <img src="/white-cart.svg" alt="" />
-                </div>
-              </div>
-              <div className="sct3-box box-mode">
-                <div className="box-img">
-                  <img src="/sct3.3.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-cart grayer-btn">
-                  <img src="/white-cart.svg" alt="" />
-                </div>
-              </div>
-              <div className="sct3-box box-mode">
-                <div className="box-img">
-                  <img src="/sct3.4.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-cart grayer-btn">
-                  <img src="/white-cart.svg" alt="" />
-                </div>
-              </div>
-              <div className="sct3-box box-mode">
-                <div className="box-img">
-                  <img src="/sct3.5.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-cart grayer-btn">
-                  <img src="/white-cart.svg" alt="" />
-                </div>
-              </div>
+              {db.map((item) => {
+                if (item.type === "products") {
+                  return (
+                    <div className="sct3-box box-mode">
+                      <div className="box-img">
+                        <img src={item.img} alt="" />
+                      </div>
+                      <div className="box-title">
+                        <h2 className="lighter-type">{item.title}</h2>
+                        <p className="box-price">{item.price}</p>
+                      </div>
+                      <div className="box-cart grayer-btn">
+                        <img src="/white-cart.svg" alt="" />
+                      </div>
+                    </div>
+                  );
+                }
+              })}
             </div>
           </div>
         </section>
@@ -305,42 +371,26 @@ function App() {
               <h2 className="lighter-type">NEW ARRIVALS</h2>
             </div>
             <div className="block">
-              <div className="sct5-box box-mode">
-                <div className="box-img">
-                  <img src="/box1.1.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-btn">
-                  <button className="addBtn grayer-btn">ADD TO CART</button>
-                </div>
-              </div>
-              <div className="sct5-box box-mode">
-                <div className="box-img">
-                  <img src="/box1.1.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-btn">
-                  <button className="addBtn grayer-btn">ADD TO CART</button>
-                </div>
-              </div>
-              <div className="sct5-box box-mode">
-                <div className="box-img">
-                  <img src="/box1.1.png" alt="" />
-                </div>
-                <div className="box-title">
-                  <h2 className="lighter-type">JAZZMASTER</h2>
-                  <p className="box-price">$1050</p>
-                </div>
-                <div className="box-btn">
-                  <button className="addBtn grayer-btn">ADD TO CART</button>
-                </div>
-              </div>
+              {db.map((item) => {
+                if (item.type === "featured") {
+                  return (
+                    <div className="sct5-box box-mode">
+                      <div className="box-img">
+                        <img src={item.img} alt="" />
+                      </div>
+                      <div className="box-title">
+                        <h2 className="lighter-type">{item.title}</h2>
+                        <p className="box-price">{item.price}</p>
+                      </div>
+                      <div className="box-btn">
+                        <button className="addBtn grayer-btn">
+                          ADD TO CART
+                        </button>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
             </div>
           </div>
         </section>
