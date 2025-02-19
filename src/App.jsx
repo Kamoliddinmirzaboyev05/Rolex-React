@@ -28,7 +28,7 @@ function App() {
                 <a href="#products">PRODUCTS</a>
               </li>
               <li>
-                <a href="#new">NEW</a>
+                <a href="#">NEW</a>
               </li>
             </ul>
           </div>
@@ -37,7 +37,7 @@ function App() {
           <div className="container">
             <div className="navlinks">
               <img
-                src={dark ? "white-logo.svg" : "logo.svg"}
+                src={dark ? "white-logo.svg" : "/logo.svg"}
                 className="logo"
                 alt=""
               />
@@ -70,24 +70,24 @@ function App() {
                   setDark(!dark);
                   localStorage.setItem("dark", !dark);
                 }}
-                src="moon.svg"
+                src="/moon.svg"
                 id="mode"
                 alt=""
               />
-              <img src="cart.svg" alt="" />
+              <img src="/cart.svg" alt="" />
               <img
                 onClick={() => {
                   setOpen(true);
                 }}
-                src="bars-light.svg"
+                src="/bars-light.svg"
                 className="bar"
                 alt=""
               />
             </div>
             <div className="hero-img">
-              <img src="Home img.png" className="decktop-hero" alt="" />
+              <img src="/Home img.png" className="decktop-hero" alt="" />
               <img
-                src="mobile-hero.png"
+                src="/mobile-hero.png"
                 className="mobile-hero"
                 alt=""
               />
@@ -131,7 +131,7 @@ function App() {
                   <h2>SALE</h2>
                 </div>
                 <div className="box-img">
-                  <img src="box1.1.png" alt="" />
+                  <img src="/box1.1.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
@@ -146,7 +146,7 @@ function App() {
                   <h2>SALE</h2>
                 </div>
                 <div className="box-img">
-                  <img src="box1.2.png" alt="" />
+                  <img src="/box1.2.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
@@ -161,7 +161,7 @@ function App() {
                   <h2>SALE</h2>
                 </div>
                 <div className="box-img">
-                  <img src="box1.3.png" alt="" />
+                  <img src="/box1.3.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
@@ -177,7 +177,7 @@ function App() {
         <section className="section2">
           <div className="container">
             <div className="sct-img">
-              <img src="Img story.png" alt="" />
+              <img src="/Img story.png" alt="" />
             </div>
             <div className="sct-text">
               <div className="sct-title">
@@ -194,7 +194,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="section3" id="pruducts">
+        <section className="section3" id>
           <div className="container">
             <div className="sct-title">
               <h2 className="lighter-type">PRODUCTS</h2>
@@ -202,62 +202,62 @@ function App() {
             <div className="block">
               <div className="sct3-box box-mode">
                 <div className="box-img">
-                  <img src="sct3.1.png" alt="" />
+                  <img src="/sct3.1.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
                   <p className="box-price">$1050</p>
                 </div>
                 <div className="box-cart grayer-btn">
-                  <img src="white-cart.svg" alt="" />
+                  <img src="/white-cart.svg" alt="" />
                 </div>
               </div>
               <div className="sct3-box box-mode">
                 <div className="box-img">
-                  <img src="sct3.2.svg" alt="" />
+                  <img src="/sct3.2.svg" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
                   <p className="box-price">$1050</p>
                 </div>
                 <div className="box-cart grayer-btn">
-                  <img src="white-cart.svg" alt="" />
+                  <img src="/white-cart.svg" alt="" />
                 </div>
               </div>
               <div className="sct3-box box-mode">
                 <div className="box-img">
-                  <img src="sct3.3.png" alt="" />
+                  <img src="/sct3.3.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
                   <p className="box-price">$1050</p>
                 </div>
                 <div className="box-cart grayer-btn">
-                  <img src="white-cart.svg" alt="" />
+                  <img src="/white-cart.svg" alt="" />
                 </div>
               </div>
               <div className="sct3-box box-mode">
                 <div className="box-img">
-                  <img src="sct3.4.png" alt="" />
+                  <img src="/sct3.4.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
                   <p className="box-price">$1050</p>
                 </div>
                 <div className="box-cart grayer-btn">
-                  <img src="white-cart.svg" alt="" />
+                  <img src="/white-cart.svg" alt="" />
                 </div>
               </div>
               <div className="sct3-box box-mode">
                 <div className="box-img">
-                  <img src="sct3.5.png" alt="" />
+                  <img src="/sct3.5.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
                   <p className="box-price">$1050</p>
                 </div>
                 <div className="box-cart grayer-btn">
-                  <img src="white-cart.svg" alt="" />
+                  <img src="/white-cart.svg" alt="" />
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@ function App() {
           <div className="container">
             <div className="sct4-text">
               <div className="quote">
-                <img src="Vector.svg" alt="" />
+                <img src="/Vector.svg" alt="" />
               </div>
               <p className="text-info grayer-type">
                 They are the best watches that one acquires, also they are
@@ -278,7 +278,7 @@ function App() {
               <h4 className="date lighter-type">March 27. 2021</h4>
               <div className="user">
                 <div className="user-img">
-                  <img src="user.svg" alt="" />
+                  <img src="/user.svg" alt="" />
                 </div>
                 <div className="user-data">
                   <p className="user-name lighter-type">Lee Doe</p>
@@ -287,15 +287,15 @@ function App() {
               </div>
               <div className="slide-button">
                 <div className="left">
-                  <img src="left.svg" alt="" />
+                  <img src="/left.svg" alt="" />
                 </div>
                 <div className="right">
-                  <img src="right.svg" alt="" />
+                  <img src="/right.svg" alt="" />
                 </div>
               </div>
             </div>
             <div className="sct4-img">
-              <img src="sct4img.png" alt="" />
+              <img src="/sct4img.png" alt="" />
             </div>
           </div>
         </section>
@@ -307,7 +307,7 @@ function App() {
             <div className="block">
               <div className="sct5-box box-mode">
                 <div className="box-img">
-                  <img src="box1.1.png" alt="" />
+                  <img src="/box1.1.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
@@ -319,7 +319,7 @@ function App() {
               </div>
               <div className="sct5-box box-mode">
                 <div className="box-img">
-                  <img src="box1.1.png" alt="" />
+                  <img src="/box1.1.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
@@ -331,7 +331,7 @@ function App() {
               </div>
               <div className="sct5-box box-mode">
                 <div className="box-img">
-                  <img src="box1.1.png" alt="" />
+                  <img src="/box1.1.png" alt="" />
                 </div>
                 <div className="box-title">
                   <h2 className="lighter-type">JAZZMASTER</h2>
