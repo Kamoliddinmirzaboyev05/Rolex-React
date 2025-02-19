@@ -11,7 +11,7 @@ function App() {
   const [open, setOpen] = useState(false);
   return (
     <div className={dark ? "dark" : ""}>
-      <header>
+      <header id="home">
         <div className={open ? "modalBack openModal" : "modalBack"}>
           <div className="mobileModal">
             <i onClick={()=>{
@@ -19,16 +19,16 @@ function App() {
             }} className="fa-solid fa-x"></i>
             <ul className="modalLinks">
               <li>
-                <a href="#">HOME</a>
+                <a href="#home">HOME</a>
               </li>
               <li>
                 <a href="#featured">FEATURED</a>
               </li>
               <li>
-                <a href="#">PRODUCTS</a>
+                <a href="#products">PRODUCTS</a>
               </li>
               <li>
-                <a href="#">NEW</a>
+                <a href="#new">NEW</a>
               </li>
             </ul>
           </div>
@@ -194,7 +194,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="section3">
+        <section className="section3" id="pruducts">
           <div className="container">
             <div className="sct-title">
               <h2 className="lighter-type">PRODUCTS</h2>
