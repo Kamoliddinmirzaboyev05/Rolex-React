@@ -14,7 +14,7 @@ function App() {
   const [db, setDb] = useState([
     {
       id: 1,
-      img: "/box1.1.png",
+      img: "/box1.1.svg",
       title: "JAZZMASTER",
       info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
       new: false,
@@ -25,12 +25,12 @@ function App() {
     {
       id: 2,
       title: "INGERSOLL",
-      info: "Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.",
+      info: "INGERSOLL is a brand that has been characterized by its quality and resistance, with a modern and elegant design.",
       new: false,
       sale: true,
       type: "featured",
       price: "$250",
-      img: "/box1.2.png",
+      img: "/box1.2.svg",
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ function App() {
       sale: true,
       type: "featured",
       price: "$890",
-      img: "/box1.3.png",
+      img: "/box1.3.svg",
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ function App() {
       sale: true,
       type: "products",
       price: "$1500",
-      img: "/sct3.1.png",
+      img: "/sct3.1.svg",
     },
     {
       id: 5,
@@ -70,7 +70,7 @@ function App() {
       sale: true,
       type: "products",
       price: "$870",
-      img: "/sct3.3.png",
+      img: "/sct3.3.svg",
     },
     {
       id: 7,
@@ -80,7 +80,7 @@ function App() {
       sale: true,
       type: "products",
       price: "$650",
-      img: "/sct3.4.png",
+      img: "/sct3.4.svg",
     },
     {
       id: 8,
@@ -90,7 +90,7 @@ function App() {
       sale: true,
       type: "products",
       price: "$950",
-      img: "/sct3.5.png",
+      img: "/sct3.5.svg",
     },
     {
       id: 9,
@@ -100,7 +100,7 @@ function App() {
       sale: false,
       type: "arrivals",
       price: "$980",
-      img: "/box1.3.png",
+      img: "/box1.3.svg",
     },
     {
       id: 10,
@@ -110,7 +110,7 @@ function App() {
       sale: false,
       type: "arrivals",
       price: "$1150",
-      img: "/box3.1.png",
+      img: "/box3.1.svg",
     },
     {
       id: 11,
@@ -120,10 +120,11 @@ function App() {
       sale: false,
       type: "arrivals",
       price: "$750",
-      img: "/box3.4.png",
+      img: "/box3.4.svg",
     },
   ]);
-
+  const [oneModal, setOneModal] = useState(false);
+  const [oneProduct, setOneProduct] = useState({});
   return (
     <div className={dark ? "dark" : ""}>
       <header id="home">
@@ -151,19 +152,23 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className="moreModalBack">
+        <div
+          className={oneModal ? "moreModalBack openMoreModal" : "moreModalBack"}>
           <div className="moreModal">
-            <i className="fa-solid fa-x"></i>
+            <i onClick={()=>{
+              setOneModal(false)
+            }} className="fa-solid fa-x"></i>
             <div className="imgSide">
-              <img src="/public/box1.1.png" alt="" />
+              <img src={oneProduct.img} alt="" />
             </div>
             <div className="dataSide">
-              <h2>JAZZMASTER</h2>
+              <h2>{oneProduct.title}</h2>
               <p>
                 Latest arrival of the new imported watches of the B720 series,
                 with a modern and resistant design.
               </p>
               <h3>$1050</h3>
+              <button>Add to Cart</button>
             </div>
           </div>
         </div>
@@ -259,7 +264,13 @@ function App() {
               {db.map((item) => {
                 if (item.type === "featured") {
                   return (
-                    <div className="box box-mode">
+                    <div
+                      onClick={() => {
+                        setOneModal(true);
+                        setOneProduct(item);
+                      }}
+                      className="box box-mode"
+                    >
                       <div className="sale">
                         <h2>SALE</h2>
                       </div>
@@ -311,7 +322,10 @@ function App() {
               {db.map((item) => {
                 if (item.type === "products") {
                   return (
-                    <div className="sct3-box box-mode">
+                    <div onClick={() => {
+                      setOneModal(true);
+                      setOneProduct(item);
+                    }} className="sct3-box box-mode">
                       <div className="box-img">
                         <img src={item.img} alt="" />
                       </div>
@@ -374,7 +388,10 @@ function App() {
               {db.map((item) => {
                 if (item.type === "featured") {
                   return (
-                    <div className="sct5-box box-mode">
+                    <div onClick={() => {
+                      setOneModal(true);
+                      setOneProduct(item);
+                    }} className="sct5-box box-mode">
                       <div className="box-img">
                         <img src={item.img} alt="" />
                       </div>
